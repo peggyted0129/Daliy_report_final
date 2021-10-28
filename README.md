@@ -6,6 +6,11 @@
 
 ---
 
+## 此專案掛在 test 區，需登入帳密才能操作
+- 設定 Middleware : Phpbb3.php
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

@@ -1,0 +1,56 @@
+html, body {
+	scroll-behavior: smooth;
+	font-family: 'Quicksand', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+	overflow-x: hidden;
+}
+img {
+	display: block;   
+	max-width: 100%;  
+	height: auto;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p {
+	line-height: 1.5;
+	margin-bottom: 0;
+} 
+h1, h2, h3, h4, h5, h6 {
+	font-size: 900;
+} 
+a {
+  display: block;
+  transition: all 0.5s;
+  &:hover {
+    text-decoration: none;
+		color: $dark;
+  }
+	&.fc-daygrid-day-number {
+		color: $dark;
+	}
+	&.fc-col-header-cell-cushion {
+		color: $dark;
+	}
+}
+ul,ol,li{
+	list-style: none;
+	padding: 0;
+	margin-bottom: 0;
+}
+.table th, .table td {
+  padding: 12px;
+	vertical-align: middle;
+}
+.table-responsive {
+	overflow-x: auto;
+}
+.bg{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.bg-cover{
+	background-size: cover;
+}
+.bg-fixed{
+	background-attachment: fixed;
+}
+.btn-close:focus {
+	box-shadow: none
+}

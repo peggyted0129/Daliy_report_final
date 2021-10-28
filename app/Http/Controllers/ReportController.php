@@ -146,7 +146,7 @@ class ReportController extends Controller
             }
         }
 
-        //dd($events);
+        // dd($events);
         return view('report', ['utype'=>session('utype'),
             'pdepno'=>session('pdepno'),
             'events'=>$events]

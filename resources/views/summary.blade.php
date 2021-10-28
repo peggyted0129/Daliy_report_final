@@ -11,6 +11,7 @@
 
 <!-- 查詢結果表格 -->
 @section('eventForm')
+  @if($utype=='G')
   <div class="container-fluid mt-6">
     <div class="card" style="font-size:14px">
       <div class="card-header p-5">
@@ -69,6 +70,7 @@
       </div>
     </div>
   </div>
+  @endif
 @endsection
 
 @section('eventjs')

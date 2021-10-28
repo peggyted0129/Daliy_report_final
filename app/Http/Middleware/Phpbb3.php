@@ -20,14 +20,14 @@ class Phpbb3
      */
     public function handle($request, Closure $next)
     {
-    /*
+    
         // 本機測試 
-        //   Session::put('pdepno', 'MSC');
-        //   Session::put('userno', 'S480');
-        //   Session::put('username_utf8', '龔麗');
-        //   Session::put('utype', 'U');
+        // Session::put('pdepno', 'MSC');
+        // Session::put('userno', 'S480');
+        // Session::put('username_utf8', '龔麗');
+        // Session::put('utype', 'U');
 
-        // *** MSA 主管測試 ***
+        // *** MSA 主管測試 : 只有主管才能看到報表 ***
         Session::put('userno', 'S102');
         Session::put('pdepno', 'MSA');
         Session::put('username_utf8', '謝玉玲');
@@ -45,9 +45,9 @@ class Phpbb3
         return $next($request);
 
         // 本機測試結束
-    */
+    
 
-
+    /*
         $config_value = DB::table('phpbb_config')
                             ->select('config_value')
                             ->where('config_name', 'cookie_name')
@@ -87,6 +87,8 @@ class Phpbb3
             return Redirect::to('https://www.relmek.com.tw');
         }
         return $next($request);
+
+    */
 
     }
 }

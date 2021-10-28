@@ -74,6 +74,9 @@ class EventController extends Controller
 
         /*
          * start日期判斷在events_sales是否已有當日業績資料
+         * 1. 如果有 : events_sales 的 id 欄位(表身) 對應 events 的 sales_id 欄位(表頭)
+         * 2. 如果沒有 : events 的 sales_id 欄位(表頭) 對應 events_sales 的 id 欄位(表身)
+         * 3. 若當天有多個事件，則以最新 "儲存" 的那筆資料 (施巴業績 & SC業績) 寫入資料表 events_sales
          */
         $sales_date = date('Y-m-d', strtotime($event->start));
         $e_sales = Events_sales::where(['sales_date'=>$sales_date, 'userno'=>Session::get('userno')])->get();
@@ -215,7 +218,6 @@ class EventController extends Controller
     {
         $event = Event::find($id);
         $status = $event->delete();
-
         return json_encode($status);
     }
 }

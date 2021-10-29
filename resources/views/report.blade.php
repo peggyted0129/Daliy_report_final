@@ -29,14 +29,14 @@
                 <td class="table-primary" align="center" colspan="2">業務代表 {{ $events[0]->userno_mandarin }}</td>
               </tr>
               <tr class="font-weight-bolder">
-                <td class="table-primary" width="10%">拜訪時間</td>
+                <td class="table-primary" width="12%">拜訪時間</td>
                 <td class="table-primary" width="18%">點名稱</td>
-                <td class="table-primary" width="13%">單位</td>
-                <td class="table-primary" width="6%">小點業績</td>
+                <td class="table-primary" width="10%">單位</td>
+                <td class="table-primary" width="7%">小點業績</td>
                 <td class="table-primary" width="8%">客戶名稱</td>
                 <td class="table-primary" width="16%">工作項目</td>
-                <td class="table-primary" width="23%">備註說明</td>
-                <td class="table-primary" width="6%">收款</td>
+                <td class="table-primary" width="22%">備註說明</td>
+                <td class="table-primary" width="7%">收款</td>
               </tr>
               <!-- 使用迴圈，設定同日期的在同一抬頭之下 -->
               @foreach($events as $key => $event)   
@@ -49,14 +49,14 @@
                     <td class="table-primary" align="center" colspan="2">業務代表 {{ $event->userno_mandarin }}</td>
                   </tr>
                   <tr class="font-weight-bolder">
-                    <td class="table-primary" width="10%">拜訪時間</td>
+                    <td class="table-primary" width="12%">拜訪時間</td>
                     <td class="table-primary" width="18%">點名稱</td>
-                    <td class="table-primary" width="13%">單位</td>
-                    <td class="table-primary" width="6%">小點業績</td>
+                    <td class="table-primary" width="10%">單位</td>
+                    <td class="table-primary" width="7%">小點業績</td>
                     <td class="table-primary" width="8%">客戶名稱</td>
                     <td class="table-primary" width="16%">工作項目</td>
-                    <td class="table-primary" width="23%">備註說明</td>
-                    <td class="table-primary" width="6%">收款</td>
+                    <td class="table-primary" width="22%">備註說明</td>
+                    <td class="table-primary" width="7%">收款</td>
                   </tr>
                 @endif
                 <tr>

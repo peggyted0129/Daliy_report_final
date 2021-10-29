@@ -80,26 +80,28 @@ class EventController extends Controller
          */
         $sales_date = date('Y-m-d', strtotime($event->start));
         $e_sales = Events_sales::where(['sales_date'=>$sales_date, 'userno'=>Session::get('userno')])->get();
-        if(isset($e_sales)) { //insert:尚未有當日業績資料
+        if($e_sales->isEmpty()) {
+            //insert:尚未有當日業績資料
             $eloquent_sales = new Events_sales();
             $eloquent_sales->sales_date = $sales_date;
-            $eloquent_sales->sales = $request->input('sales'); // 施巴當日業績
-            $eloquent_sales->sales_sc = $request->input('sales_sc'); 
+            $eloquent_sales->sales = $request->input('sales');
+            $eloquent_sales->sales_sc = $request->input('sales_sc');
             $eloquent_sales->userno = Session::get('userno');
             $eloquent_sales->pdepno = Session::get('pdepno');
             $eloquent_sales->save();
 
             $event->sales_id = $eloquent_sales->id;
             $event->save();
-        } else { //update:已有當日業績
+        } else {
+            //update:已有當日業績
             foreach($e_sales as $value) {
                 $events_sales_id = $value->id;
             }
             $eloquent_sales = Events_sales::find($events_sales_id);
-            if (!empty($request->input('sales'))) {  // user有輸入數值
+            if (!empty($request->input('sales'))) {  //user有輸入數值
                 $eloquent_sales->sales = $request->input('sales');
             }
-            if (!empty($request->input('sales_sc'))) {  // user有輸入數值
+            if (!empty($request->input('sales_sc'))) {  //user有輸入數值
                 $eloquent_sales->sales_sc = $request->input('sales_sc');
             }
 
@@ -107,7 +109,7 @@ class EventController extends Controller
 
             $event->sales_id = $eloquent_sales->id;
             $event->save();
-        }     
+        }        
 
         $ret['id'] = $event->id;
         $ret['title'] = $event->title;
@@ -116,7 +118,6 @@ class EventController extends Controller
         $ret['allDay'] = $event->allDay;
         return json_encode($ret);
        
-        // return redirect('/calendar');
     }
 
     public function show($id)
@@ -212,6 +213,7 @@ class EventController extends Controller
         $ret['allDay'] = $event->allDay;
 
         return json_encode($ret);
+
     }
 
     public function destroy($id)

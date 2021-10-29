@@ -36,18 +36,12 @@ class Phpbb3
         // Session::put('userno', 'S002');
         // Session::put('pdepno', '001');    
 
-        // *** **
-
-        //   Session::put('pdepno', 'MIS');
-        //   Session::put('userno', 'S257');
-        //   Session::put('username_utf8', 'Vicky');
-    
         return $next($request);
 
         // 本機測試結束
     
 
-    /*
+    /* 
         $config_value = DB::table('phpbb_config')
                             ->select('config_value')
                             ->where('config_name', 'cookie_name')

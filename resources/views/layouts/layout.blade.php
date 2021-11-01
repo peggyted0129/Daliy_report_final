@@ -14,25 +14,28 @@
   <link rel="stylesheet" href="{{ asset('styles/select2/select2.min.css') }}">
   <!-- jquery-datetimepicker -->
   <link rel="stylesheet" href="{{ asset('styles/jquery-datetimepicker/jquery.datetimepicker.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
-  <script src="{{ mix('/js/app.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ asset(mix('/css/app.css')) }}">
+  <script src="{{ asset(mix('/js/app.js')) }}"></script>
 </head>
 <body>
+  <?php
+    $path = \Illuminate\Support\Facades\Route::getCurrentRoute()->uri;
+  ?>
   <ul class="nav nav-tabs mb-8" style="font-size:14px">
     <li class="nav-item">
-      <a class="nav-link {{ Request::path() === '/' ? 'active' : '' }}" href="/">目錄清單</a>
+      <a class="nav-link" href="{{ url('../../menu') }}">目錄清單</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link {{ Request::path() === 'calendar' ? 'active' : '' }}" href="/calendar">日曆</a>
+      <a class="nav-link {{ $path === 'calendar' ? 'active' : '' }}" href="{{ url('calendar') }}">日曆</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link {{ Request::path() === 'report' ? 'active' : '' }}" href="/report">管理報表</a>
+      <a class="nav-link {{ $path === 'report' ? 'active' : '' }}" href="{{ url('report') }}">管理報表</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link {{ Request::path() === 'summary' ? 'active' : '' }}" href="/summary">彙整總表</a>
+      <a class="nav-link {{ $path === 'summary' ? 'active' : '' }}" href="{{ url('summary') }}">彙整總表</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link {{ Request::path() === 'report_cal' ? 'active' : '' }}" href="/report_cal">日曆報表</a>
+      <a class="nav-link {{ $path === 'report_cal' ? 'active' : '' }}" href="{{ url('report_cal') }}">日曆報表</a>
     </li>
   </ul>
 

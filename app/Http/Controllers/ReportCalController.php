@@ -21,14 +21,13 @@ class ReportCalController extends Controller
         
         $report_cal = [];
         foreach($events as $key => $value) {
-        $usernoMandarin = new \App\UDClasses\UsernoToMandarin();
-        $usernoMandarin->process($value->userno);
+            $usernoMandarin = new \App\UDClasses\UsernoToMandarin();
+            $usernoMandarin->process($value->userno);
 
-        $report_cal[$key]['userno_mandarin'] = $usernoMandarin->returnString();
-        $report_cal[$key]['userno'] = $value->userno;
-        $report_cal[$key]['start'] = $value->start;
+            $report_cal[$key]['userno_mandarin'] = $usernoMandarin->returnString();
+            $report_cal[$key]['userno'] = $value->userno;
+            $report_cal[$key]['start'] = $value->start;
         }
-        // return $events;
         return $report_cal;
     }
 }

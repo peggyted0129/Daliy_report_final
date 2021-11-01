@@ -9,6 +9,16 @@
 ## 此專案掛在 test 區，需登入帳密才能操作
 - 設定 Middleware : Phpbb3.php
 
+## calendar 頁
+- 新增工作日報 "小點業績" : 為「拜訪機關」的業績 (「events 資料表」的 sales 欄位)
+- 同日若有多筆事件 "業績" 記錄 :  (「events 資料表」的 sales_id) 對應 (「events_sales 資料表」的 id)
+  - 施巴當日業績 & SC當日業績將以 "最新的那筆" 記錄為主
+    - 施巴當日業績 (「events_sales 資料表」的 sales 欄位)
+    - SC當日業績 (「events_sales 資料表」的 sales_sc 欄位)
+
+## report_cal 頁
+- 顯示自己部門同仁的特休及事件
+
 ---
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

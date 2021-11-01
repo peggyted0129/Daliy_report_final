@@ -31,7 +31,7 @@ Route::resource('cdrcus', CdrcusController::class);
 
 // 呼叫 /report_cal 頁
 Route::get('report_cal', [ReportCalController::class,'index'])->middleware('phpbb3');
-// api | 得到自己的單天行程 (在 /report_cal 頁使用): reportjs.blade.php
+// api | 得到全部門的行程 (在 /report_cal 頁使用): reportjs.blade.php
 Route::get('report_cal_all', [ReportCalController::class ,'all'])->middleware('phpbb3');
 
 // api | 得到自己的特休 (在 /calendar 頁使用): eventjs.blade.php

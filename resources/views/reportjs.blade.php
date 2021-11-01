@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     selectable: true, // 點選格子會變色
     // 呈現 events
     eventSources: [
-      {   // 日報紀錄
+      {   // 全部門日報紀錄 : 背景藍色
         events: function(info, successCallback, failureCallback) {
             $.ajax({
               url: 'report_cal_all',
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, // 這裡結束
       },
-      {   // 全部門特休紀錄
+      {   // 全部門特休紀錄 : 背景灰色
         events: function(info, successCallback, failureCallback) {
             $.ajax({
               url: 'pal_all',

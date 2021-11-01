@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class PalController extends Controller
 {
@@ -21,7 +22,7 @@ class PalController extends Controller
             $join->on('palhad.mancode', '=', 'paldta.mancode')
                 ->on('palhad.enterdate', '=', 'paldta.enterdate');
         })
-        ->where('palhad.mancode', '=', session('userno'))
+        ->where('palhad.mancode', '=', Session::get('userno'))
         ->where('palhad.enterdate', '>', '2020-01-01')
         ->where('paldta.dayofftype', '=', '99') // dayofftype 為特休
         ->whereRaw('palhad.apprsta in ("3", "9")') // 若價單是 "核准" 或 "結案"
@@ -60,7 +61,7 @@ class PalController extends Controller
                 $join->on('palhad.mancode', '=', 'paldta.mancode')
                     ->on('palhad.enterdate', '=', 'paldta.enterdate');
             })
-            ->where('palhad.depno', '=', session('pdepno'))
+            ->where('palhad.depno', '=', Session::get('pdepno'))
             ->where('palhad.enterdate', '>', '2020-01-01')
             ->where('paldta.dayofftype', '=', '99')
             ->whereRaw('palhad.apprsta in ("3", "9")')

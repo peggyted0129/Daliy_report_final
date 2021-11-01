@@ -18,15 +18,6 @@
 
 ## report_cal 頁
 - 顯示自己部門同仁的特休及事件
-
----
-
-## calendar 頁
-- 新增工作日報 "小點業績" : 為拜訪機關的業績 (「events 資料表」的 sales 欄位)
-- 同日若有多筆事件 "業績" 記錄 :  (「events 資料表」的 sales_id) 對應 (「events_sales 資料表」的 id)
-  - 施巴當日業績 & SC當日業績將以 "最新的那筆" 記錄為主
-    - 施巴當日業績 (「events_sales 資料表」的 sales 欄位)
-    - SC當日業績 (「events_sales 資料表」的 sales_sc 欄位)
  
 ---
 
